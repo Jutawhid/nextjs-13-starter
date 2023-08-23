@@ -1,0 +1,64 @@
+@import "color-themes";
+@import "mixins";
+@import "breakpoints";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  background-color: var(--color-bg) !important;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include md {
+    max-width: $mdMQ;
+  }
+
+  @include lg {
+    max-width: $lgMQ;
+  }
+
+  @include xl {
+    max-width: $lgMQ;
+  }
+}
+
+// remove tap effect on mobile devices
+* {
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+}
+
+.color-mode-container {
+  width: 2rem;
+  height: 2rem;
+
+  @include center;
+}
